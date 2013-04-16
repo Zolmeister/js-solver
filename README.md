@@ -47,6 +47,13 @@ triangleSolver.solve({
 */
 </code></pre>
 
+##Bonus
+These are also valid equations
+<pre><code>'a^2+b^2' //^ == power
+'sqrt(c**2-a**2)' //** == power - from python, also notice sqrt, without the Math. in front (see note)
+</code></pre>
+Valid Math defaults:
+abs acos asin atan atan2 ceil co exp floor log pow E PI sin sqrt tan
 
 ###notes:
-The equations are evaled, so be aware of that.
+The equations are evaled, so be aware of that. Also I used with(Math) to get the math stuff to eval... yeah...
