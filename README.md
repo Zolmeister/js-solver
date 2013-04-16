@@ -5,7 +5,7 @@
 <pre><code>//node.js
 var Solver = require('./js-solver')
 //browser
-<script src='js-solver.js'></script>
+&lt;script src='js-solver.js'>&lt;/script>
 </code></pre>
 
 
@@ -46,3 +46,7 @@ triangleSolver.solve({
   { c: 5, b: 3, area: 50, h: 10, a: 4, base: 10 }
 */
 </code></pre>
+
+
+###notes:
+The equations are evaled, so be aware of that.
