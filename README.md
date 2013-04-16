@@ -3,7 +3,8 @@
 
 ##include
 <pre><code>//node.js
-var Solver = require('./js-solver')
+npm install js-solver
+var Solver = require('js-solver')
 //browser
 &lt;script src='js-solver.js'>&lt;/script>
 </code></pre>
@@ -41,7 +42,7 @@ triangleSolver.solve({
     b: 3,
     area: 50,
     h: 10
-}))
+})
 /*
   { c: 5, b: 3, area: 50, h: 10, a: 4, base: 10 }
 */

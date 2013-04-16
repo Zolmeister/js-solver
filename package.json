@@ -1,0 +1,22 @@
+{
+  "name": "js-solver",
+  "version": "0.0.1",
+  "description": "Algebraic equation solving helper library",
+  "main": "js-solver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zolmeister/js-solver.git"
+  },
+  "keywords": [
+    "algebra",
+    "equation",
+    "math"
+  ],
+  "author": "Zolmeister",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "5799469ea4fcd551ace18722def308a0210c84e2"
+}
