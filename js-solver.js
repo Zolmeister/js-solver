@@ -37,23 +37,23 @@ var Solver = (function () {
         }
 
         for (var key in obj) {
-            if (this.params.indexOf(key) != -1) {
+            if (this.params.indexOf(key) != -1 && (obj[key]==0 || obj[key])) {
                 eval(key + '=' + obj[key]),
                 out[key] = obj[key]
             }
         }
-
+        var equations = JSON.parse(JSON.stringify(this.equations))
         while (lastNull !== nullCount) {
             lastNull = nullCount;
-            for (var eq in this.equations) {
+            for (var eq in equations) {
                 with(Math)
-                    var result = eval(this.equations[eq]);
+                    var result = eval(equations[eq]);
                 if (result) {
                     out[eq] = result;
-                    this.equations[eq] = undefined;
+                    equations[eq] = undefined;
                 }
             }
-            nullCount = Object.keys(this.equations).length;
+            nullCount = Object.keys(equations).length;
         }
         return out;
     }
