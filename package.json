@@ -1,6 +1,6 @@
 {
   "name": "js-solver",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Algebraic equation solving helper library",
   "main": "js-solver.js",
   "scripts": {
