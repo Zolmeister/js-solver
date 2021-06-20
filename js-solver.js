@@ -1,4 +1,4 @@
-var Solver = (function () {
+let Solver = (function () {
 
     function Solver(equations) {
         this.params = Object.keys(equations)
@@ -6,7 +6,7 @@ var Solver = (function () {
     }
     
     Solver.prototype.parseEquations = function(equations){
-        var replacements = {
+        let replacements = {
             power : {
                 re: /([\w.]+)\^([\w.]+)/g,
                 res: 'Math.pow($1,$2)'
@@ -16,10 +16,10 @@ var Solver = (function () {
                 res: 'Math.pow($1,$2)'
             },
         }
-        for(var key in equations){
-            var eq = equations[key]
-            for(var re in replacements){
-                var repl = replacements[re]
+        for(let key in equations){
+            let eq = equations[key]
+            for(let re in replacements){
+                let repl = replacements[re]
                 eq = eq.replace(repl.re, repl.res)
             }
             equations[key] = eq
@@ -28,24 +28,24 @@ var Solver = (function () {
     }
 
     Solver.prototype.solve = function solve(obj) {
-        var out = {},
+        let out = {},
             nullCount = Object.keys(this.equations).length,
             lastNull = 0;
 
-        for (var key = 0; key < this.params.length; key++) {
+        for (let key = 0; key < this.params.length; key++) {
             eval(this.params[key] + '=undefined')
         }
 
-        for (var key in obj) {
+        for (let key in obj) {
             if (this.params.indexOf(key) != -1 && (obj[key]==0 || obj[key])) {
                 eval(key + '=' + obj[key]),
                 out[key] = obj[key]
             }
         }
-        var equations = JSON.parse(JSON.stringify(this.equations))
+        let equations = JSON.parse(JSON.stringify(this.equations))
         while (lastNull !== nullCount) {
             lastNull = nullCount;
-            for (var eq in equations) {
+            for (let eq in equations) {
                 with(Math)
                     var result = eval(equations[eq]);
                 if (result) {
